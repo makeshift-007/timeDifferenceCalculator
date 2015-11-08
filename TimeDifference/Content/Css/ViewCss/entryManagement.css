@@ -1,0 +1,80 @@
+﻿.MainDashBoardUserTimeDisplay {
+    margin-left: 3%;
+    margin-top: 10%;
+    margin-right: 3%;
+}
+
+.SearchFields {
+    float: left !important;
+    margin-right: 1%;
+}
+
+.UserInfoDiv {
+    margin-left: 1%;
+    margin-bottom: 1%;
+    text-align: center;
+}
+
+.UserName {
+    font-size: 20px;
+}
+
+.Email {
+    margin-left: 5%;
+    font-size: 20px;
+}
+
+.AddNewTimeZoneDiv {
+    margin-left: 1%;
+    margin-bottom: 1%;
+}
+
+.NoEntryFoundDiv {
+    margin-left: 1%;
+    margin-bottom: 15%;
+    text-align: center;
+}
+
+.NoEntryFoundLabel {
+    margin-left: 5%;
+    font-size: 20px;
+}
+
+.DifferenceData {
+    margin-top: 0 !important;
+}
+
+.CentreTextAlign {
+    text-align: center;
+}
+
+.HourInput {
+    width: 40%;
+    float: left;
+    margin-right: 2%;
+}
+
+.MinuteInput {
+    width: 40%;
+}
+
+.addUserButton {
+    margin-left: 3%;
+    margin-top: 10%;
+    margin-right: 3%;
+}
+
+
+
+.repeaterTimeRecord {
+    width: 245px;
+}
+
+.searchFormTime {
+    margin-bottom: 2%;
+}
+
+.searchTextBox {
+    width: 17%;
+    float: left !important;
+}

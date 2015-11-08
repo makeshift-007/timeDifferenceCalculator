@@ -1,0 +1,44 @@
+﻿.MainButtonDifference {
+    margin-left: 3%;
+}
+/*Used to set the footer at bottom*/
+.SetFooterDown {
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    background-color: white;
+    border-top: solid black;
+    border-width: 1px;
+}
+
+.RoleEdit {
+    float: left;
+    margin-left: 3%;
+    margin-right: 2%;
+}
+
+.loginForm {
+    width: 32%;
+    margin-left: 34%;
+}
+
+.marginClass {
+    margin-top: 5%;
+}
+
+.customCheckBox {
+    float: left;
+}
+
+.signIn {
+    margin-bottom: 50%;
+}
+
+.registration {
+    width: 37%;
+    margin-left: 37%;
+}
+
+.registrationButton {
+    margin-bottom: 45%;
+}

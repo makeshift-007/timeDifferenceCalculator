@@ -1,0 +1,261 @@
+﻿<!DOCTYPE html>
+<html lang="en" ng-app="timeDifference">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Time Difference</title>
+    <!-- Bootstrap Core CSS -->
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="/css/agency.css" rel="stylesheet">
+
+    <!-- View CSS -->
+    <link href="/Content/Css/ViewCss/index.css" rel="stylesheet" />
+
+    <!-- Custom Fonts -->
+    <link href="/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="/Content/Css/ExternalCss/ExternalCss1.css" rel="stylesheet" />
+    <link href="/Content/Css/ExternalCss/ExternalCss2.css" rel="stylesheet" />
+    <link href="/Content/Css/ExternalCss/ExternalCss3.css" rel="stylesheet" />
+    <link href="/Content/Css/ExternalCss/ExternalCss4.css" rel="stylesheet" />
+    <link href="Content/Css/ExternalCss/notify.css" rel="stylesheet" />
+    <link href="Content/Css/Loading.css" rel="stylesheet" />
+
+    <!-- CSS for Toogle -->
+    <!--<link href="css/bootstrap-toggle.min.css" rel="stylesheet" />-->
+    <!--<link href="css/bootstrap2-toggle.min.css" rel="stylesheet" />-->
+    <link href="/css/bootstrap-switch.css" rel="stylesheet" />
+
+</head>
+<body id="page-top" class="index">
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container" ng-controller="HeaderCtrl">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand page-scroll" href="#" onclick="return false;">Time Difference</a>
+                <!--<a class="navbar-brand btn-primary" href="#page-top">Time Difference</a>-->
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-left" id="ulButtons" style="">
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                    <li style="margin-right: 10px;" class="">
+                        <a class="btn btn-link" href="" id="btnHome" onclick="return false;" style="display: none;" ng-click="Home()">Home</a>
+                    </li>
+                    <li style="margin-right: 10px;" class="">
+                        <a class="btn btn-link" href="" id="btnManagement" onclick="return false;" style="display: none;" ng-click="Management()">User Management</a>
+                    </li>
+                    <li style="margin-right: 10px;" class="">
+                        <a class="btn btn-link" href="" id="btnEntryManagement" onclick="return false;" style="display: none;" ng-click="EntryManagement()">Time Zone Entry Management</a>
+                    </li>
+
+                </ul>
+                <ul class="nav navbar-nav navbar-right" id="ulBasic">
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#login">Login</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#register">Register</a>
+                    </li>
+
+                </ul>
+                <ul class="nav navbar-nav navbar-right" style="display: none" id="ulUserInfo">
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+
+                    <li style="margin-right: 10px;">
+                        <a href="#" onclick="return false;" id="lblUserName" style="color: white;" ng-click="ProfileView()" ng-model="UserName"></a>
+                    </li>
+                    <li style="border-radius:3px;background-color: #fec503;">
+                        <a class="page-scroll" href="#" onclick="return false;" ng-click="logOut()">LogOut</a>
+                    </li>
+
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+
+    <div ng-view=""></div>
+
+    <!-- Loading DIV -->
+    <div id="divLoading" class="Loading" style="background-color: #FFF !important; display: none">
+        <div class="InnerLoading">
+            <p>
+                <img src="/Content/Images/Loading.gif" class="ImageLoading" />
+            </p>
+            <p id="pLoadingText" style="text-align: center"></p>
+            <div id="divExtraContentsLoading" style="display:none"></div>
+        </div>
+    </div>
+    <!-- Till Here -->
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <span class="copyright">Copyright &copy; Time Difference 2015</span>
+                </div>
+                <div class="col-md-4">
+                    <ul class="list-inline social-buttons">
+                        <li>
+                            <a href="#" onclick="return false;"><i class="fa fa-twitter"></i></a>
+                        </li>
+                        <li>
+                            <a href="#" onclick="return false;"><i class="fa fa-facebook"></i></a>
+                        </li>
+                        <li>
+                            <a href="#" onclick="return false;"><i class="fa fa-linkedin"></i></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <ul class="list-inline quicklinks">
+                        <li>
+                            <a href="#" onclick="return false;">Privacy Policy</a>
+                        </li>
+                        <li>
+                            <a href="#" onclick="return false;">Terms of Use</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- User Info PopUp -->
+    <script type="text/ng-template" id="userInfo.html">
+        <form class="form-horizontal " role="form" data-ng-submit="ok()">
+            <div class="modal-header">
+                <h3 class="modal-title">Profile Information</h3>
+            </div>
+            <div class="modal-body">
+
+
+                <div class="form-group">
+
+                    <div class="col-sm-9">
+                        <input type="text" id="firstName" placeholder="Full Name" class="form-control" ng-model="data.UserName" required>
+                    </div>
+                </div>
+                <div class="form-group">
+
+                    <div class="col-sm-9">
+                        <input type="email" id="email" placeholder="Email" class="form-control" ng-change="checkEmailExistModal(this,'{{data.Email}}')" ng-model="data.Email" required>
+                    </div>
+                </div>
+                <div class="form-group">
+
+                    <div class="col-sm-9">
+                        <label>Change Password</label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+
+                    <div class="col-sm-9">
+                        <input type="password" id="modalPassword" placeholder="Password" class="form-control" ng-model="data.password" oninput="SetInfo(this)">
+                    </div>
+                </div>
+                <div class="form-group">
+
+                    <div class="col-sm-9">
+                        <input type="password" id="confirmPassword" placeholder="Confirm Password" class="form-control" oninput="checkConfirmPasswordModal(this)">
+                    </div>
+                </div>
+
+                <div class="form-group" ng-hide="data.isNonAdmin">
+                    <label class="RoleEdit">Role: </label>
+                    <select class="form-control" ng-model="data.Role" style="width: 20%;float: left;margin-right: 2%;">
+                        <option value="1">User</option>
+                        <option value="2">Manager</option>
+                        <option value="3">Admin</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <button class="btn btn-primary" type="submit">Save</button>
+                <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
+            </div>
+        </form>
+    </script>
+
+
+
+
+    <!-- jQuery -->
+    <script src="Scripts/jquery-2.1.4.min.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="/js/bootstrap.min.js"></script>
+    <!-- Plugin JavaScript -->
+    <!--<script src="/js/jquery.js"></script>-->
+    <!-- Angular Js -->
+
+    <script src="Scripts/angular.js"></script>
+    <script src="Scripts/angular-route.js"></script>
+
+
+    <!-- JS For toogle -->
+    <!--<script src="js/bootstrap-toggle.min.js"></script>-->
+    <!--<script src="js/bootstrap2-toggle.min.js"></script>-->
+    <!--<script src="https://gitcdn.github.io/bootstrap-toggle/2.2.0/js/bootstrap-toggle.min.js"></script>-->
+    <script src="/js/bootstrap-switch.js"></script>
+
+    <script src="/js/jquery.easing.min.js"></script>
+    <script src="/js/classie.js"></script>
+    <script src="/js/cbpAnimatedHeader.js"></script>
+    <!-- Contact Form JavaScript -->
+    <script src="/js/jqBootstrapValidation.js"></script>
+    <script src="/js/contact_me.js"></script>
+    <!-- Custom Theme JavaScript -->
+    <script src="/js/agency.js"></script>
+
+    <!-- Angular Controls -->
+    <script src="Scripts/ui-bootstrap-tpls-0.14.3.min.js"></script>
+    <script src="app/app.js"></script>
+    <script src="app/controller/controllers.js"></script>
+    <script src="app/services/timeDifferenceService.js"></script>
+
+
+
+
+
+    <!-- Filter Js -->
+    <script src="app/filters/timeDiffereceFilter.js"></script>
+    <script src="app/services/CommonServices.js"></script>
+
+    <!-- CommonMethods -->
+    <script src="app/commonMethods/commonMethods.js"></script>
+
+    <!-- Directives -->
+    <script src="app/directives/dynamicRender.js"></script>
+    <!-- ViewScripts -->
+
+    <script src="Scripts/ViewScript/index.js"></script>
+
+    <script src="/Scripts/ViewScript/home.js"></script>
+
+    <!-- Notif imports -->
+    <script src="Scripts/notify.js"></script>
+
+</body>
+</html>

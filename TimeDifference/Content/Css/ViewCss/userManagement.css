@@ -1,0 +1,59 @@
+﻿.MainDashBoardUserTimeDisplay {
+    margin-left: 3%;
+    margin-top: 10%;
+    margin-right: 3%;
+}
+
+.CenterAlign {
+    text-align: center;
+}
+
+.MaxWidth {
+    width: 100%;
+}
+
+.addUserButton {
+    margin-left: 3%;
+    margin-top: 10%;
+    margin-right: 3%;
+}
+
+
+.AddNewTimeZone {
+    margin-left: 2%;
+}
+
+.SearchEntry {
+    float: left !important;
+}
+
+.TextCentre {
+    text-align: center;
+}
+
+.timeLabel {
+    margin-top: 0 !important;
+}
+
+.TextHour {
+    width: 40%;
+    float: left;
+    margin-right: 2%;
+}
+
+.TextMinute {
+    width: 40%;
+}
+
+.repeaterTimeRecord {
+    width: 245px;
+}
+
+.searchFormTime {
+    margin-bottom: 2%;
+}
+
+.searchTextBox {
+    width: 17%;
+    float: left !important;
+}
