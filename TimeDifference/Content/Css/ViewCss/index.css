@@ -23,8 +23,14 @@
 }
 
 @media screen and (max-width: 900px) {
-    .loginForm {  width: 96%;
-    margin-left: 2%;
+    .loginForm {
+        width: 96%;
+        margin-left: 2%;
+    }
+
+    .registration {
+        width: 96%;
+        margin-left: 2%;
     }
 }
 
