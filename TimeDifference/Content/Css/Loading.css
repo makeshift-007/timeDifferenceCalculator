@@ -15,12 +15,18 @@
 }
 
 .InnerLoading {
-    left: 48% !important;
-    width: 7% !important;
+    left: 48% ;
+    width: 7% ;
     position: absolute !important;
     top: 42% !important;
 }
 
 .ImageLoading {
     width: 100% !important;
+}
+@media screen and (max-width: 900px) {
+      .InnerLoading {
+        left: 43% !important;
+        width: 18% !important;
+    }
 }

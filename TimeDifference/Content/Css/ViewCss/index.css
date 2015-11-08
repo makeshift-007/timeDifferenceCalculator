@@ -32,6 +32,33 @@
         width: 96% !important;
         margin-left: 2% !important;
     }
+
+    .btn-xl {
+        padding: 13px 10px !important;
+    }
+
+
+    .repeaterTimeRecord {
+        width: 245px !important;
+        margin-left: 12% !important;
+    }
+
+    .searchTextBox {
+        width: 100% !important;
+        float: left !important;
+        margin-bottom: 2% !important;
+    }
+
+    .AddNewTimeZone {
+        margin-left: 8% !important;
+        margin-bottom: 3% !important;
+    }
+
+    .MainDashBoardUserTimeDisplay {
+        margin-left: 3% !important;
+        margin-top: 17% !important;
+        margin-right: 3% !important;
+    }
 }
 
 .marginClass {
